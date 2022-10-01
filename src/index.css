@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-html,
 body,
 #root,
 #root > div {
@@ -16,6 +15,7 @@ body {
 button {
   padding: 12px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 section {
@@ -24,5 +24,5 @@ section {
 }
 
 .dark section {
-  border-color: white;
+  border-bottom: white 2px dashed;
 }

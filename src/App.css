@@ -4,8 +4,8 @@ nav {
   padding: 12px;
 }
 
-nav.dark {
-  background-color: white;
+.dark nav {
+  background-color: beige;
 }
 
 .dark-mode--flip-button {
@@ -15,4 +15,11 @@ nav.dark {
 
 div.dark {
   background-color: black;
+}
+
+select,
+input {
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 4px;
 }

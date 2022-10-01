@@ -7,7 +7,6 @@
 
 .year-info--random-button {
   display: block;
-  /* background: beige; */
   margin: 32px auto;
 }
 
@@ -22,8 +21,8 @@
   font-size: 20px;
 }
 
-.dark h1,
-.dark h3,
-.dark label {
+.dark .year-info--title,
+.dark .year-info--select-label,
+.dark .year-info--or {
   color: white;
 }

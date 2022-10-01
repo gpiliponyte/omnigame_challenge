@@ -1,0 +1,29 @@
+.vending-machine--button {
+  margin: 12px;
+}
+
+.vending-machine--container {
+  background-color: beige;
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.vending-machine--product-container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.vending-machine--status {
+  max-width: 300px;
+  background-color: aliceblue;
+  height: 30px;
+  margin: 6px auto;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.dark .vending-machine--title {
+  color: white;
+}

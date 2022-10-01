@@ -1,0 +1,7 @@
+.vending-machine--product {
+  border: black solid 2px;
+  margin: 0 auto;
+  padding: 12px;
+  background-color: bisque;
+  border-radius: 4px;
+}

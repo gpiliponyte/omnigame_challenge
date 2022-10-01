@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import "./App.css";
+import VendingMachine from "./components/VendingMachine";
 import YearInfo from "./components/YearInfo";
 
 function App() {
@@ -11,13 +12,14 @@ function App() {
 
   return (
     <div className={theme}>
-      <nav className={theme}>
+      <nav>
         <button className="dark-mode--flip-button" onClick={toggleTheme}>
           Switch to {theme == "light" ? "dark" : "light"} mode
         </button>
       </nav>
 
       <YearInfo></YearInfo>
+      <VendingMachine></VendingMachine>
     </div>
   );
 }
