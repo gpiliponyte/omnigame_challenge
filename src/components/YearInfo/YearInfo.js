@@ -11,7 +11,7 @@ function YearInfo() {
     fetch(`http://numbersapi.com/${year}/year?json`)
       .then((response) => response.json())
       .then((data) => setYearInfo(data));
-  }, [year]);
+  }, []);
 
   function handleChange(event) {
     setYear(event.target.value);

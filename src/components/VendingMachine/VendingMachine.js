@@ -96,11 +96,11 @@ function VendingMachine() {
         </div>
 
         <div>
-          <button lassName="vending-machine--button" onClick={buy}>
+          <button className="vending-machine--button" onClick={buy}>
             BUY
           </button>
 
-          <button lassName="vending-machine--button" onClick={cancel}>
+          <button className="vending-machine--button" onClick={cancel}>
             CANCEL
           </button>
         </div>
