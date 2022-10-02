@@ -19,10 +19,9 @@
 
 .year-info--text {
   font-size: 20px;
+  font-weight: 500;
 }
 
-.dark .year-info--title,
-.dark .year-info--select-label,
-.dark .year-info--or {
-  color: white;
+.dark .year-info--text {
+  color: black;
 }

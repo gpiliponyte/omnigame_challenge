@@ -24,6 +24,6 @@
   border-radius: 3px;
 }
 
-.dark .vending-machine--title {
-  color: white;
+body.dark .vending-machine--container {
+  color: black;
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./VendingMachine.css";
-import { data } from "../data";
-import Product from "./Product";
+import { data } from "../../data";
+import Product from "../Product/Product";
 
 function VendingMachine() {
   const [products, setProducts] = useState(data);
@@ -55,7 +55,7 @@ function VendingMachine() {
   ));
 
   const productsNames = products
-    .filter((product) => product.units)
+    .filter((p) => p.units)
     .map((p) => (
       <option key={p.id} value={p.id}>
         {p.name}

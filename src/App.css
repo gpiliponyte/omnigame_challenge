@@ -1,25 +1,26 @@
 nav {
-  background-color: black;
   display: flex;
   padding: 12px;
 }
 
-.dark nav {
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+body.light nav {
+  background-color: black;
+}
+
+body.dark nav {
   background-color: beige;
 }
 
-.dark-mode--flip-button {
-  display: flex;
-  margin-left: auto;
-}
-
-div.dark {
-  background-color: black;
-}
-
-select,
-input {
-  padding: 12px;
-  margin: 6px 0;
-  border-radius: 4px;
+body.dark section {
+  border-bottom: white 2px dashed;
 }

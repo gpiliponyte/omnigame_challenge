@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-body,
-#root,
-#root > div {
-  height: 100%;
-}
-
 body {
   font-family: "Poppins";
   text-align: center;
@@ -23,6 +17,9 @@ section {
   border-bottom: black 2px dashed;
 }
 
-.dark section {
-  border-bottom: white 2px dashed;
+select,
+input {
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 4px;
 }
