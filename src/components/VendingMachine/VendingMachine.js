@@ -17,37 +17,44 @@ function VendingMachine() {
     setAmount(event.target.value);
   }
 
+  function reset() {
+    setSelectedProductId("");
+    setAmount(0);
+  }
+
   function buy() {
     if (!selectedProductId) {
       setMessage("No product selected");
-    } else {
-      const selectedProduct = products.filter(
-        (p) => p.id == selectedProductId
-      )[0];
-
-      if (selectedProduct.price > amount) {
-        setMessage("Not enough money inserted");
-      } else {
-        setMessage(
-          `${selectedProduct.name} Bought. Change: ${(
-            amount - selectedProduct.price
-          ).toFixed(2)} EU`
-        );
-        setProducts(
-          products.map((p) =>
-            p.id != selectedProductId ? p : { ...p, units: p.units - 1 }
-          )
-        );
-        setSelectedProductId("");
-        setAmount(0);
-      }
+      return false;
     }
+
+    const selectedProduct = products.filter(
+      (p) => p.id == selectedProductId
+    )[0];
+
+    if (selectedProduct.price > amount) {
+      setMessage("Not enough money inserted");
+      return false;
+    }
+
+    setMessage(
+      `${selectedProduct.name} Bought. Change: ${(
+        amount - selectedProduct.price
+      ).toFixed(2)} EU`
+    );
+
+    setProducts(
+      products.map((p) =>
+        p.id != selectedProductId ? p : { ...p, units: p.units - 1 }
+      )
+    );
+
+    reset();
   }
 
   function cancel() {
     setMessage(`Change: ${amount} EU`);
-    setSelectedProductId("");
-    setAmount(0);
+    reset();
   }
 
   const productsList = products.map((product) => (

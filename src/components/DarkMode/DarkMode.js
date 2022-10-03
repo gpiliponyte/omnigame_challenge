@@ -1,23 +1,35 @@
+import { useEffect, useState } from "react";
 import "./DarkMode.css";
 
-const LIGHT_THEME = "light";
-const DARK_THEME = "dark";
+const THEME = {
+  LIGHT: "light",
+  DARK: "dark",
+  DEFAULT: "light",
+};
+
 const THEME_KEY = "theme";
 
 function DarkMode() {
-  let theme = localStorage ? localStorage.getItem(THEME_KEY) : "";
-
-  document.body.classList.add(
-    theme === LIGHT_THEME || theme === DARK_THEME ? theme : LIGHT_THEME
+  const [theme, setTheme] = useState(
+    localStorage.getItem(THEME_KEY) || THEME.DEFAULT
   );
 
-  function switchTheme() {
-    const newTheme = theme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
-
-    document.body.classList.replace(theme, newTheme);
+  const switchTheme = () => {
+    const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
+    setTheme(newTheme);
     localStorage.setItem(THEME_KEY, newTheme);
-    theme = newTheme;
-  }
+  };
+
+  useEffect(() => {
+    const cl = document.body.classList;
+    if (theme === THEME.DARK) {
+      cl.add(THEME.DARK);
+      cl.remove(THEME.LIGHT);
+    } else {
+      cl.add(THEME.LIGHT);
+      cl.remove(THEME.DARK);
+    }
+  }, [theme]);
 
   return <button id="darkMode" onClick={switchTheme}></button>;
 }

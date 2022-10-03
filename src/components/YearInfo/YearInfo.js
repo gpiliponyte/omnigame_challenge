@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./YearInfo.css";
 
 const CURRENT_YEAR = new Date().getFullYear();
+const AVAILABLE_YEARS = Array.from(Array(CURRENT_YEAR + 1).keys());
 
 function YearInfo() {
   const [year, setYear] = useState(CURRENT_YEAR);
@@ -9,9 +10,15 @@ function YearInfo() {
 
   useEffect(() => {
     fetch(`http://numbersapi.com/${year}/year?json`)
-      .then((response) => response.json())
-      .then((data) => setYearInfo(data));
-  }, []);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Server responds with error!");
+        }
+        return response.json();
+      })
+      .then((data) => setYearInfo(data))
+      .catch(() => setYearInfo({ text: "An error occurred." }));
+  }, [year]);
 
   function handleChange(event) {
     setYear(event.target.value);
@@ -21,7 +28,7 @@ function YearInfo() {
     setYear(Math.floor(Math.random() * (CURRENT_YEAR + 1)));
   }
 
-  const years = Array.from(Array(CURRENT_YEAR + 1).keys()).map((year) => (
+  const years = AVAILABLE_YEARS.map((year) => (
     <option key={year} value={year}>
       {year}
     </option>
