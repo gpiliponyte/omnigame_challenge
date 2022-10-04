@@ -4,10 +4,6 @@ This project was created for the **Omnigame** interview.
 
 ## Accessing the Project
 
-The project can be found on *https://omnigame-challenge.herokuapp.com/* or run locally.
-
-### Running the Project Locally
-
 The project can be run locally by running the following commaneds:
 
 1. `git clone https://github.com/gpiliponyte/omnigame_challenge.git`
